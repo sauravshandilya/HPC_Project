@@ -6,7 +6,7 @@
 
 ##### Compilation:
 
-g++ -std=c++11 main.cpp io.cpp calculations.cpp -Wall -Wextra  `pkg-config --libs --cflags opencv`
+g++ -std=c++11 main.cpp io.cpp calculations.cpp -Wall -Wextra  'pkg-config --libs --cflags opencv'
 
 ##### Execution
 
