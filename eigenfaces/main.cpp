@@ -23,8 +23,10 @@ int main(int argc, const char * argv[])
     cv::Mat A = training.images;
     
     cv::Mat meanImage(1, A.cols, CV_64F);
-    cv::reduce(A, meanImage, 0, CV_REDUCE_AVG); // mean for each column
-
+    //cv::reduce(A, meanImage, 0, CV_REDUCE_AVG); // mean for each column
+    
+    cv::reduce(A, meanImage, 0, 1); // mean for each column
+    
     for (int i = 0; i < A.rows; ++i)
     {
         A.row(i) -= meanImage;

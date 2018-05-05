@@ -1,3 +1,7 @@
+./data/7.pgm
+./data/8.pgm
+./data/9.pgm
+./data/10.pgm
 ./data/10.pgm
 ./data/120.pgm
 ./data/20.pgm

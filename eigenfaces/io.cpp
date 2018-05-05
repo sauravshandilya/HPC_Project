@@ -14,7 +14,7 @@ void printUsage()
 /// preprocessing image to the form factor needed by PCA
 void pgmToMatRow(cv::Mat& image)
 {
-    const double intensity_range = 255.0; // range of the possible value in the used image format
+    const double intensity_range = 255.0; // range of the possible value in the used image format. Gray scale image
     
     image.convertTo(image, CV_64F, 1.0 / intensity_range); // convert input image format to a standard one
     image = image.reshape(0, 1); // we have the images as row vectors
