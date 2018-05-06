@@ -1,17 +1,12 @@
 # HPC Project
 
+### Folder Structure:
+1. serial_code: Serial implementation of code
+2. parallel_code: Parallel implementation of code
+3. measure_runtime: Compute Average execution time of code by running the code specified number of time
+4. orl_faces: Image dataset
 
 ### Instructions:
+- Refer to readme file within folders for implementation details, information and compilation-execution commands
 
 
-##### Compilation:
-
-g++ -std=c++11 main.cpp io.cpp calculations.cpp -Wall -Wextra  'pkg-config --libs --cflags opencv'
-
-note: it is ` and not ' in pkg-config ...
-
-##### Execution
-
-./a.out "./input/training.txt" "./input/test.txt" 0.99
-
-./a.out "./input/training.txt" "./input/test.txt" 12
