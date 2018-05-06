@@ -7,6 +7,7 @@ void printUsage();
 
 /// preprocessing image to the form factor needed by PCA
 void pgmToMatRow(cv::Mat& image);
+void print_matrix_details(cv::Mat& matrix, std::string matrix_name);
 
 cv::Mat readPgm(const std::string& imagePath);
 

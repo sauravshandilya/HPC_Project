@@ -1,7 +1,0 @@
-./data/8.pgm
-./data/9.pgm	
-./data/10.pgm
-./data/17.pgm
-./data/18.pgm
-./data/398.pgm
-./data/399.pgm

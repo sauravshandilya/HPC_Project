@@ -11,6 +11,17 @@ void printUsage()
     std::cout << "Usage: <executable> <path to training data file> <path to recognition task file> <variance threshold (if value is less than 1) or number of principal components (otherwise)>" << std::endl;
 }
 
+// utility function to print matrix information
+void print_matrix_details(cv::Mat& matrix, std::string matrix_name)
+{
+    double minVal; 
+    double maxVal;
+    minMaxLoc( matrix, &minVal, &maxVal);
+    
+    std::cout << "Details of " << matrix_name << " => ";
+    std::cout << "rows: " <<matrix.rows << " || cols: " << matrix.cols << " || min val: " << minVal << " || max val: " << maxVal << std::endl;
+}
+
 /// preprocessing image to the form factor needed by PCA
 void pgmToMatRow(cv::Mat& image)
 {
