@@ -1,11 +1,12 @@
 #include <iostream>
+#include <stdio.h>
 #include <string>
 #include <chrono>
-
 #include <opencv2/opencv.hpp>
-
 #include "io.h"
 #include "calculations.h"
+
+
 
 int main(int argc, const char * argv[])
 {
@@ -79,12 +80,6 @@ int main(int argc, const char * argv[])
     
     auto finishClassifying = std::chrono::high_resolution_clock::now();
     
-    // std::cout << "Image Name" << "\t-" << "Match Label" << "\t-" << "Actual Label" << "\t-" << "Match/Not-Match" << std::endl;
-    // for(unsigned int i = 0; i < test.imagename.size(); ++i)
-    // {
-    //     std::cout << test.imagename[i] << "\t-\t" << test.classificationLabels[i] << "\t-\t" << test.labels[i] << "\t-\t"<< ((test.labels[i] == test.classificationLabels[i]) ? "Match":"Not-Match") << std::endl;
-    // }
-
     match_result(test);
     
     std::cout << "Timing Output ---------------------" << std::endl;

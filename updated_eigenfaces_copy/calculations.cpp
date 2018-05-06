@@ -1,10 +1,14 @@
 #include <cmath>
 #include <vector>
 #include <limits>
-
 #include <opencv2/opencv.hpp>
-
 #include "calculations.h"
+
+#ifdef DEBUG
+    #define DEBUG_PRINT printf
+#else
+    #define DEBUG_PRINT
+#endif
 
 unsigned int getSufficientComponentNum(cv::Mat eigenvalues, double epsilon)
 {
@@ -141,7 +145,8 @@ std::vector<unsigned int>& classifyImages( Data& testData
 
 void match_result(Data& test)
 {
-    std::cout << "Image Name" << "\t-" << "Match Label" << "\t-" << "Actual Label" << "\t-" << "Match/Not-Match" << std::endl;
+    // std::cout << "Image Name" << "\t-" << "Match Label" << "\t-" << "Actual Label" << "\t-" << "Match/Not-Match" << std::endl;
+    DEBUG_PRINT("Image Name \t- Match Label \t- Actual Label \t- Match/Not-Match");
     unsigned int match=0, noMatch=0;
 
     
@@ -149,7 +154,9 @@ void match_result(Data& test)
     for(unsigned int i = 0; i < test.imagename.size(); ++i)
     {
         ((test.labels[i] == test.classificationLabels[i]) ? match++: noMatch++); 
-        std::cout << test.imagename[i] << "\t-\t" << test.classificationLabels[i] << "\t-\t" << test.labels[i] << "\t-\t"<< ((test.labels[i] == test.classificationLabels[i]) ? "Match": "Not-Match") << std::endl;
+        // std::cout << test.imagename[i] << "\t-\t" << test.classificationLabels[i] << "\t-\t" << test.labels[i] << "\t-\t"<< ((test.labels[i] == test.classificationLabels[i]) ? "Match": "Not-Match") << std::endl;
+        // char str[20] = {test.imagename[i].c_str()};
+        DEBUG_PRINT("%s \t- %d \t- %d \t- %s\n", test.imagename[i].c_str(), test.classificationLabels[i], test.labels[i], ((test.labels[i] == test.classificationLabels[i]) ? "Match": "Not-Match"));
     }
 
     std::cout << "Match: " << match << "\t Non-Match: " << noMatch << "\t Accuracy " << (float) (match*100)/(match+noMatch) << "%" << std::endl; 
